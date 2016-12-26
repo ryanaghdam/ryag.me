@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: ryagme_production
+  username: ryagme
+  password: <%= ENV['RYAGME_DATABASE_PASSWORD'] %>
