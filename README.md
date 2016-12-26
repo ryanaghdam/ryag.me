@@ -1,3 +1,3 @@
 # ryag.me
 
-A very simple URL shortner written in Rails.
+A very simple URL shortener written in Rails.
