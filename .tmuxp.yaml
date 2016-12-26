@@ -1,0 +1,13 @@
+session_name: ryagme_shortner
+start_directory: ./
+windows:
+- window_name: shell
+  focus: True
+  panes:
+  -
+- window_name: server
+  panes:
+  - rails server -p 9000
+- window_name: console
+  panes:
+  - rails console
