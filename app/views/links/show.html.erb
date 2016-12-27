@@ -7,7 +7,7 @@
 
 <p>
   <strong>Target url:</strong>
-  <%= @link.target_url %>
+  <%= link_to @link.target_url, @link.target_url, target: "_blank" %>
 </p>
 
 <%= link_to 'Edit', edit_link_path(@link) %> |
