@@ -14,7 +14,7 @@
   <tbody>
     <% @links.each do |link| %>
       <tr>
-        <td><%= link.alias %></td>
+        <td><%= link_to link.alias, link.full_short_url %></td>
         <td><%= link_to truncate(link.target_url, :length => 64), link.target_url, target: "_blank" %></td>
         <td><%= link_to 'Show', link %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
