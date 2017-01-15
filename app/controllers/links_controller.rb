@@ -11,6 +11,7 @@ class LinksController < ApplicationController
   # GET /links/1
   # GET /links/1.json
   def show
+    @views = View.where(link_id: params[:id])
   end
 
   # GET /links/new
@@ -64,6 +65,14 @@ class LinksController < ApplicationController
 
   def redirect
     @link = Link.find_by_alias!(params[:alias])
+
+    View.create do |view|
+      view.ip_address= request.remote_ip
+      view.locale= request.headers['HTTP_ACCEPT_LANGUAGE']
+      view.user_agent= request.headers['HTTP_USER_AGENT']
+      view.link_id= @link.id
+    end
+
     redirect_to @link.target_url, :status => 302
   end
 

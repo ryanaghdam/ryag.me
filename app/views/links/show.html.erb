@@ -10,5 +10,18 @@
   <%= link_to @link.target_url, @link.target_url, target: "_blank" %>
 </p>
 
+
+<strong>Views:</strong>
+<table>
+  <% @views.each do |view| %>
+    <tr>
+      <td><%= view.created_at %></td>
+      <td><%= view.ip_address %></td>
+      <td><%= view.user_agent %></td>
+      <td><%= view.locale %></td>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>

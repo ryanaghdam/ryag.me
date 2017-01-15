@@ -1,4 +1,4 @@
-$(function() {
+(function() {
   function generateRandomIdentifier(stringLength) {
     function getCharacter() {
       var characters = 'ABCDEFGHJKNMPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
@@ -9,13 +9,12 @@ $(function() {
   }
 
   function isEmpty(elem) {
-    return elem.val().length === 0;
+    return elem.value.length === 0;
   }
 
-  var $aliasField = $('#link_alias');
+  var aliasField = document.getElementById('link_alias');
 
-  if (isEmpty($aliasField)) {
-    debugger;
-    $aliasField.val(generateRandomIdentifier(4));
+  if (isEmpty(aliasField)) {
+    aliasField.value = generateRandomIdentifier(4);
   }
-});
+})();
