@@ -1,0 +1,25 @@
+<h1>Views</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Alias</th>
+      <th>Timestamp</th>
+      <th>IP Address</th>
+      <th>User Agent</th>
+      <th>Locale</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @views.each do |view| %>
+      <tr>
+        <td><%= link_to view.link.alias, view.link %></td>
+        <td><%= view.created_at %></td>
+        <td><%= view.ip_address %></td>
+        <td><%= view.user_agent %></td>
+        <td><%= view.locale %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
